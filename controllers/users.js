@@ -1,5 +1,17 @@
 const JWT = require('jsonwebtoken');
-const User = require('../models/user')
+const User = require('../models/user');
+const dotenv = require('dotenv');
+
+dotenv.config();
+
+const signToken = user => {
+  return JWT.sign({
+    iss: 'eclipz-api',
+    sub: user.id,
+    iat: new Date().getTime(),
+    exp: new Date().setDate(new Date().getDate() + 1)
+  }, process.env.SECRET_TOKEN);
+}
 
 module.exports = {
   signUp: async (req, res, next) => {
@@ -16,13 +28,8 @@ module.exports = {
     const newUser = new User({ email, password });
     await newUser.save();
 
-    //Create the token
-    const token = JWT.sign({
-      iss: 'eclipz-api',
-      sub: newUser.id,
-      iat: new Date().getTime(),
-      exp: new Date().setDate(new Date().getDate() + 1)
-    }, 'eclipz-api-authentication');
+    //Generate the token
+    const token = signToken(newUser);
 
     //Respond with token
     res.status(201).json({ token });
