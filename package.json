@@ -1,0 +1,22 @@
+{
+  "name": "eclipz-api",
+  "version": "1.0.0",
+  "description": "The API of Eclipz media",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/lexyking/Eclipz-api.git"
+  },
+  "keywords": [
+    "aurexy17"
+  ],
+  "author": "Joan Yassi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lexyking/Eclipz-api/issues"
+  },
+  "homepage": "https://github.com/lexyking/Eclipz-api#readme"
+}
