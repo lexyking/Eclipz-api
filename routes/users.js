@@ -1,5 +1,7 @@
 const express = require('express');
-const router = express.Router();
+//express-promise-router is a package that handle try and catch under the hood
+const router = require('express-promise-router')();
+//const router = express.Router();
 
 const UsersController = require('../controllers/users');
 
@@ -10,4 +12,6 @@ router.route('/signin')
   .post(UsersController.signIn);
 
 router.route('/secret')
-  .post(UsersController.secret);
+  .get(UsersController.secret);
+
+module.exports = router;
