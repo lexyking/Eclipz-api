@@ -1,0 +1,6 @@
+POST   http://localhost:3000/users/signUp
+Content-Type: application/json
+
+{
+	"email":"joan@postman.com"
+}
