@@ -18,7 +18,11 @@ const userSchema = new Schema({
 //hash the pwd before it get save
 userSchema.pre('save', async function (next) {
   try {
-
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(this.password, salt);
+    //reassign the hashed pwd to the original one before saving
+    this.password = hashedPassword;
+    next();
   } catch (error) {
     next(error);
   }
