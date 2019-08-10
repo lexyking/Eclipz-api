@@ -2,6 +2,11 @@ POST   http://localhost:3000/users/signUp
 Content-Type: application/json
 
 {
-	"email":"jumpman3@postman.com",
-  	"password":"mentor"
+	"email":"Raptors@postman.com",
+  	"password":"raptors"
 }
+
+
+# GET http://localhost:3000/users/secret
+# Content-Type: application/json
+# Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJlY2xpcHotYXBpIiwic3ViIjoiNWQ0ZTA3MGM3ODAxZDIxZTVmYzNhNzFlIiwiaWF0IjoxNTY1Mzk0NzAwOTY5LCJleHAiOjE1NjU0ODExMDA5Njl9.xp6LDRX3Q-leOHV9dZgd4wvslkB6z18gMq3PIZk2LzY
