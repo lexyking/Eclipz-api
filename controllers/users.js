@@ -41,6 +41,7 @@ module.exports = {
   },
 
   secret: async (req, res, next) => {
-    console.log('UsersController.secret() called')
+    console.log('I managed to get here in the secret place');
+    res.json({ secret: "resource" })
   }
 }
