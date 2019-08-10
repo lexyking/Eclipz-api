@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
@@ -13,6 +14,15 @@ const userSchema = new Schema({
     required: true
   }
 })
+
+//hash the pwd before it get save
+userSchema.pre('save', async function (next) {
+  try {
+
+  } catch (error) {
+    next(error);
+  }
+});
 const User = mongoose.model('user', userSchema);
 
 module.exports = User;
